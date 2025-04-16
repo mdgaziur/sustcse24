@@ -1,0 +1,31 @@
+@reference "./globals.css";
+
+.motto {
+    @apply flex;
+}
+
+.motto-second-part-underline {
+    width: 0;
+    @apply sm:h-1.5;
+    @apply h-1;
+    @apply bg-amber-400;
+}
+
+.scrolldown-indicator {
+    @apply absolute;
+    animation: jump 1s ease infinite;
+}
+
+@keyframes jump {
+    0% {
+        top: 50%;
+    }
+
+    50% {
+        top: 70%;
+    }
+
+    100% {
+        top: 50%;
+    }
+}
