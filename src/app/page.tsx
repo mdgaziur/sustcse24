@@ -7,7 +7,7 @@ import {ScrollToPlugin} from "gsap/ScrollToPlugin";
 import {MotionPathPlugin} from "gsap/MotionPathPlugin";
 import {EaselPlugin} from "gsap/EaselPlugin";
 import {TextPlugin} from "gsap/TextPlugin";
-/*import Link from "next/link";*/
+import Link from "next/link";
 import PageStyles from "./page.module.css";
 import Image from "next/image";
 import SustLogo from "./sust.png";
@@ -22,7 +22,6 @@ export default function Home() {
   useGSAP(() => {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-    document.body.style.overflowY = "hidden";
     const tl = gsap.timeline({
       id: "main_timeline"
     });
@@ -57,7 +56,7 @@ export default function Home() {
       duration: 0.5
     }, "<");
 
- /*   const nav_links = document.querySelectorAll("nav > a");
+    const nav_links = document.querySelectorAll("nav > a");
     for (let i = nav_links.length - 1; i >= 0; i--) {
       const nav_link = nav_links[i];
 
@@ -68,7 +67,7 @@ export default function Home() {
         // Not doing so results in it being too fast.
         duration: 0.25 * GSAP_TIMESCALE,
       });
-    }*/
+    }
 
     const motto_second_part = document.createElement("div");
     motto_second_part.textContent = "future";
@@ -124,11 +123,11 @@ export default function Home() {
         Skip Intro
       </button>*/}
       <header className="h-screen w-screen fixed top-0 left-0">
-{/*        <nav className="p-5 flex absolute right-0 top-0 z-20 sm:justify-end justify-center w-full font-semibold text-foreground-secondary gap-5">
-          <Link className="-mt-14 opacity-0 md:text-lg text-[12px]" href="/coming-soon">Curriculum</Link>
+        <nav className="p-5 flex absolute right-0 top-0 z-20 sm:justify-end justify-center w-full font-semibold text-foreground-secondary gap-5">
+          <Link className="-mt-14 opacity-0 md:text-lg text-[12px]" href="/curriculum">Curriculum</Link>
           <Link className="-mt-14 opacity-0 md:text-lg text-[12px]" href="/coming-soon">Books and References</Link>
           <Link className="-mt-14 opacity-0 md:text-lg text-[12px]" href="/coming-soon">Events</Link>
-        </nav>*/}
+        </nav>
         <div className="stock-footage-container absolute h-screen w-screen opacity-0 z-0">
           <video className="stock-footage object-cover h-full w-full opacity-90" src="stock.mp4" loop={true} muted={true} autoPlay={true}></video>
         </div>
