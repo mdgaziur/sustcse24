@@ -1,6 +1,13 @@
+"use client";
+
 import Link from "next/link";
+import {useEffect} from "react";
 
 export default function ComingSoonPage() {
+  useEffect(() => {
+    document.body.style.overflowY = "auto";
+  });
+
   return (
     <main className={"h-screen w-screen flex items-center justify-center flex-col gap-1"}>
       <h1 className="p-5">Coming soon</h1>

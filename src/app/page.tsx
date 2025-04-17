@@ -1,7 +1,7 @@
 "use client";
 import { gsap } from "gsap";
 import {useGSAP} from "@gsap/react";
-import {useRef} from "react";
+import {useEffect, useRef} from "react";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {ScrollToPlugin} from "gsap/ScrollToPlugin";
 import {MotionPathPlugin} from "gsap/MotionPathPlugin";
@@ -114,6 +114,10 @@ export default function Home() {
     const timeline = gsap.getById("main_timeline");
     timeline!.seek("end");
   }*/
+
+  useEffect(() => {
+    document.body.style.overflowY = "hidden";
+  });
 
   return (
     <main ref={container}>

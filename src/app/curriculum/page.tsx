@@ -1,6 +1,13 @@
+"use client";
+
 import Link from "next/link";
+import {useEffect} from "react";
 
 export default function CurriculumPage() {
+  useEffect(() => {
+    document.body.style.overflowY = "auto";
+  });
+
   return (
     <div className="min-h-screen flex flex-col items-center">
       <nav className="p-5 flex sm:justify-end justify-center w-full font-semibold text-foreground-secondary gap-5">

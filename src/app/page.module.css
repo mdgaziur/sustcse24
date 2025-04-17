@@ -1,9 +1,5 @@
 @reference "./globals.css";
 
-body {
-    overflow-y: hidden;
-}
-
 .motto {
     @apply flex;
 }
