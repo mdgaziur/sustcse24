@@ -142,7 +142,7 @@ export default function Cursor() {
           transition: "transform 250ms ease, opacity 250ms ease"
         }}
       >
-        <div className="transition-all w-5 h-5 bg-white rounded-full" ref={cursorInnerRef}></div>
+        <div className="transition-all w-5 h-5 backdrop-invert-100 rounded-full" ref={cursorInnerRef}></div>
       </div>
     </div>
   )
