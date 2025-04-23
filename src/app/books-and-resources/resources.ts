@@ -15,13 +15,13 @@ export const Books = [
     name: "Discrete Mathematics and Its Applications by Kenneth H. Rosen",
     author: "Kenneth H. Rosen",
     course: "1.1 CSE 143: Discrete Mathematics",
-    link: "https://elearn.daffodilvarsity.edu.bd/pluginfile.php/783865/mod_resource/intro/Discrete%20Mathematics%20and%20Its%20Applications%2C%207%20edition%20-%20Rosen.pdf",
+    link: "https://github.com/gigahidjrikaaa/Engineering-Books/blob/main/Discrete%20Mathematics/Rosen%20-%20Discrete%20Mathematics%20and%20Its%20Application%20%5B8th%20Edition%5D.pdf",
   },
   {
     name: "Introductory Circuit Analysis",
     author: "Robert L. Boylestad",
     course: "1.1 EEE 109D: Electrical Circuits and Electrical Circuits Lab",
-    link: "https://elearn.daffodilvarsity.edu.bd/pluginfile.php/834961/mod_resource/content/6/Boylsted%2013th.pdf",
+    link: "https://archive.org/details/doc-9-pdf-8b8cd5cadbd34b4c7e7be2eaf8457e3f-original",
   },
   {
     name: "Matrices",
@@ -138,7 +138,7 @@ export const Books = [
     name: "Physics (Vol 1)",
     author: "Halliday D. and Resnick",
     course: "1.2 PHY 103D",
-    link: "https://elearn.daffodilvarsity.edu.bd/pluginfile.php/987150/mod_label/intro/fundamentals-of-physics-textbook.pdf"
+    link: "https://github.com/gigahidjrikaaa/Engineering-Books/blob/main/Physics/Halliday%2C%20Resnick%20-%20Fundamentals%20of%20Physics%20%5B10th%20Edition%5D.pdf"
   },
 ];
 
