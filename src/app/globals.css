@@ -42,7 +42,7 @@ h1 {
 }
 
 h2 {
-  @apply md:text-4xl text-[16px];
+  @apply md:text-4xl text-[24px];
 }
 
 h1, h2 {

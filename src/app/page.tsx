@@ -1,16 +1,16 @@
 "use client";
 import { gsap } from "gsap";
 import {useGSAP} from "@gsap/react";
-import {useEffect, useRef} from "react";
+import {useRef} from "react";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {ScrollToPlugin} from "gsap/ScrollToPlugin";
 import {MotionPathPlugin} from "gsap/MotionPathPlugin";
 import {EaselPlugin} from "gsap/EaselPlugin";
 import {TextPlugin} from "gsap/TextPlugin";
-import Link from "next/link";
 import PageStyles from "./page.module.css";
 import Image from "next/image";
 import SustLogo from "./sust.png";
+import NavBar from "@/components/nav";
 
 const GSAP_TIMESCALE = 1.75;
 
@@ -40,10 +40,6 @@ export default function Home() {
     tl.to(".stock-footage-container", {
       opacity: .9,
       duration: 1,
-    });
-
-    tl.to(document.body, {
-      overflowY: "scroll"
     });
 
     tl.to(".title-container", {
@@ -115,10 +111,6 @@ export default function Home() {
     timeline!.seek("end");
   }*/
 
-  useEffect(() => {
-    document.body.style.overflowY = "hidden";
-  });
-
   return (
     <main ref={container}>
 {/*      <button
@@ -127,16 +119,12 @@ export default function Home() {
         Skip Intro
       </button>*/}
       <header className="h-screen w-screen fixed top-0 left-0">
-        <nav className="p-5 flex absolute right-0 top-0 z-20 sm:justify-end justify-center w-full font-semibold text-foreground-secondary gap-5">
-          <Link className="-mt-14 opacity-0 md:text-lg text-[12px]" href="/curriculum">Curriculum</Link>
-          <Link className="-mt-14 opacity-0 md:text-lg text-[12px]" href="/coming-soon">Books and References</Link>
-          <Link className="-mt-14 opacity-0 md:text-lg text-[12px]" href="/coming-soon">Events</Link>
-        </nav>
+        <NavBar classes={"absolute right-0 top-0 z-20"} linkClasses={"-mt-14 opacity-0"} />
         <div className="stock-footage-container absolute h-screen w-screen opacity-0 z-0">
           <video className="stock-footage object-cover h-full w-full opacity-90" src="stock.mp4" loop={true} muted={true} autoPlay={true}></video>
         </div>
         <div className="title-container z-10 bg-white h-screen -top-full w-screen absolute sm:gap-10 gap-5 left-0 flex flex-col justify-center items-center">
-          <Image className="md:w-50 w-25" src={SustLogo} alt="Logo of SUST" />
+          <Image className="md:w-50 w-25" priority={true} src={SustLogo} alt="Logo of SUST" />
           <h1 className="title text-[#0e0e0e] font-mono">SUST</h1>
           <h2 className={`motto ${PageStyles['motto']} font-mono text-center`}></h2>
         </div>
