@@ -23,9 +23,9 @@ export default function CurriculumPage() {
       <div className="flex-1 flex flex-col items-center gap-5 p-5 w-full">
         <a className="p-1 text-md font-semibold border-1 rounded-sm hover:bg-[#e0e0e0] hover:text-[#0e0e0e] transition-all" href={"./curriculum_19-20.pdf"} target="_blank" download={true}>Download PDF</a>
         <h2>Courses</h2>
-        <span><i>Click on the rows to expand them and see more details</i></span>
-        <div className={"md:w-5xl w-full overflow-x-auto flex justify-center"}>
-          <table>
+        <span className={"text-sm"}><i>Click on the rows to expand them and see more details</i></span>
+        <div className={"max-w-full overflow-x-auto"}>
+          <table className={"md:w-4xl w-auto"}>
             <thead>
             <tr>
               <td className={"p-5 border-1"}>Year - Semester</td>
