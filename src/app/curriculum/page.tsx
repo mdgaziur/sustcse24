@@ -1,9 +1,9 @@
 "use client";
 
 import {useEffect, useState} from "react";
-import NavBar from "@/components/nav";
+import NavBar from "../../components/nav";
 import Head from "next/head";
-import {CURRICULUM} from "@/app/curriculum/curriculum_19_20";
+import {CURRICULUM} from "./curriculum_19_20";
 import React from "react";
 
 export default function CurriculumPage() {
