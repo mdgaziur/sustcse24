@@ -13,7 +13,7 @@ let lastScrollPosY = 0;
 // mouseenter are handled normally.
 let ignoreMouse = 0;
 
-function getRefInnerSpan<T>(ref: RefObject<T>): RefObject<HTMLSpanElement> {
+function getRefInnerElement<T>(ref: RefObject<T>): RefObject<HTMLSpanElement> {
   return ref as RefObject<HTMLSpanElement>;
 }
 
@@ -23,10 +23,10 @@ function mouseUp<T, A>(e: MouseEvent, cursorRef: RefObject<T>, cursorInnerRef: R
     return;
   }
 
-  getRefInnerSpan(cursorRef).current.style.transform = "scale(1)";
+  getRefInnerElement(cursorRef).current.style.transform = "scale(1)";
 
-  getRefInnerSpan(cursorInnerRef).current.style.height = "20px";
-  getRefInnerSpan(cursorInnerRef).current.style.width = "20px";
+  getRefInnerElement(cursorInnerRef).current.style.height = "20px";
+  getRefInnerElement(cursorInnerRef).current.style.width = "20px";
 }
 
 function mouseDown<T, A>(e: MouseEvent, cursorRef: RefObject<T>, cursorInnerRef: RefObject<A>) {
@@ -35,12 +35,12 @@ function mouseDown<T, A>(e: MouseEvent, cursorRef: RefObject<T>, cursorInnerRef:
     return;
   }
 
-  getRefInnerSpan(cursorRef).current.style.transform = "scale(0.7)";
+  getRefInnerElement(cursorRef).current.style.transform = "scale(0.7)";
 
   const el = document.elementFromPoint(e.clientX, e.clientY);
   if (el!.getAttribute("onclick") != null || el!.getAttribute("href") != null) {
-    getRefInnerSpan(cursorInnerRef).current.style.height = "100%";
-    getRefInnerSpan(cursorInnerRef).current.style.width = "100%";
+    getRefInnerElement(cursorInnerRef).current.style.height = "100%";
+    getRefInnerElement(cursorInnerRef).current.style.width = "100%";
   }
 }
 
@@ -53,23 +53,23 @@ function mouseMove<T, B>(e: MouseEvent, cursorRef: RefObject<T>, cursorInnerRef:
   currentPosY = e.clientY + (document.body.scrollTop || document.documentElement.scrollTop);
   currentPosX = e.clientX + (document.body.scrollLeft || document.documentElement.scrollLeft);
 
-  getRefInnerSpan(cursorRef).current.style.top = `${currentPosY}px`;
-  getRefInnerSpan(cursorRef).current.style.left = `${currentPosX}px`;
+  getRefInnerElement(cursorRef).current.style.top = `${currentPosY}px`;
+  getRefInnerElement(cursorRef).current.style.left = `${currentPosX}px`;
 
-  if (getRefInnerSpan(cursorRef).current.style.opacity == null
-    || getRefInnerSpan(cursorRef).current.style.opacity === "0"
-    || getRefInnerSpan(cursorRef).current.style.opacity === "") {
-    getRefInnerSpan(cursorRef).current.style.opacity = "1";
+  if (getRefInnerElement(cursorRef).current.style.opacity == null
+    || getRefInnerElement(cursorRef).current.style.opacity === "0"
+    || getRefInnerElement(cursorRef).current.style.opacity === "") {
+    getRefInnerElement(cursorRef).current.style.opacity = "1";
   }
 
-  getRefInnerSpan(cursorInnerRef).current.style.height = "20px";
-  getRefInnerSpan(cursorInnerRef).current.style.width = "20px";
+  getRefInnerElement(cursorInnerRef).current.style.height = "20px";
+  getRefInnerElement(cursorInnerRef).current.style.width = "20px";
 
   const el = document.elementFromPoint(e.clientX, e.clientY);
   if (el!.getAttribute("onclick") != null || el!.getAttribute("href") != null) {
-    getRefInnerSpan(cursorInnerRef).current.style.transform = "scale(1.5)";
+    getRefInnerElement(cursorInnerRef).current.style.transform = "scale(1.5)";
   } else {
-    getRefInnerSpan(cursorInnerRef).current.style.transform = "scale(1)";
+    getRefInnerElement(cursorInnerRef).current.style.transform = "scale(1)";
   }
 }
 
@@ -79,9 +79,9 @@ function mouseEnter<T>(e: MouseEvent, cursorRef: RefObject<T>) {
     return;
   }
 
-  getRefInnerSpan(cursorRef).current.style.top = `${e.y}px`;
-  getRefInnerSpan(cursorRef).current.style.left = `${e.x}px`;
-  getRefInnerSpan(cursorRef).current.style.opacity = "1";
+  getRefInnerElement(cursorRef).current.style.top = `${e.y}px`;
+  getRefInnerElement(cursorRef).current.style.left = `${e.x}px`;
+  getRefInnerElement(cursorRef).current.style.opacity = "1";
 }
 
 function mouseOut<T>(e: MouseEvent, cursorRef: RefObject<T>) {
@@ -90,7 +90,7 @@ function mouseOut<T>(e: MouseEvent, cursorRef: RefObject<T>) {
     return;
   }
 
-  getRefInnerSpan(cursorRef).current.style.opacity = "0";
+  getRefInnerElement(cursorRef).current.style.opacity = "0";
 }
 
 export default function Cursor() {
@@ -128,8 +128,8 @@ export default function Cursor() {
       currentPosX += scrollPosXDelta;
       currentPosY += scrollPosYDelta;
 
-      getRefInnerSpan(cursorRef).current.style.top = `${currentPosY}px`;
-      getRefInnerSpan(cursorRef).current.style.left = `${currentPosX}px`;
+      getRefInnerElement(cursorRef).current.style.top = `${currentPosY}px`;
+      getRefInnerElement(cursorRef).current.style.left = `${currentPosX}px`;
     });
   }, []);
 
@@ -137,7 +137,7 @@ export default function Cursor() {
     <div className="relative">
       <div
         ref={cursorRef}
-        className="opacity-0 absolute z-50 flex items-center justify-center w-20 h-20 rounded-full border-1 -translate-1/2 pointer-events-none"
+        className="opacity-0 absolute z-50 flex items-center justify-center w-20 h-20 -translate-1/2 pointer-events-none"
         style={{
           transition: "transform 250ms ease, opacity 250ms ease"
         }}
