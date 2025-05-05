@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Curriculum from "./curriculum";
 import React from "react";
 
@@ -9,6 +8,6 @@ export const metadata = {
 
 export default function CurriculumPage() {
   return (
-    <Curriculum />
+    <Curriculum/>
   )
 }
