@@ -2,12 +2,15 @@
 
 .motto {
     @apply flex;
+    @apply w-max;
+    @apply text-[12px];
+    @apply md:text-2xl;
+    @apply font-bold;
 }
 
 .motto-second-part-underline {
     width: 0;
-    @apply sm:h-1.5;
-    @apply h-1;
+    @apply md:h-[2.5px];
     @apply bg-amber-400;
 }
 

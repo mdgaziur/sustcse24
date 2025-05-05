@@ -20,23 +20,21 @@ export default function BooksAndReferences() {
                 <td className={PageStyles["resources-table-td"]}>Name</td>
                 <td className={PageStyles["resources-table-td"]}>Course</td>
                 <td className={PageStyles["resources-table-td"]}>Author</td>
-                <td className={PageStyles["resources-table-td"]}>Link</td>
               </tr>
               </thead>
               <tbody>
               {
                 Books.map((resource, idx) => (
                   <tr key={idx}>
-                    <td className={PageStyles["resources-table-td"]}>{resource.name}</td>
-                    <td className={PageStyles["resources-table-td"]}>{resource.course}</td>
-                    <td className={PageStyles["resources-table-td"]}>{resource.author}</td>
                     <td className={PageStyles["resources-table-td"]}>
                       {
                         resource.link ?
-                          <a className={`${PageStyles["resources-table-a"]} wrap-anywhere`} href={resource.link}>{resource.link}</a>
-                          : <span>Unavailable</span>
+                            <a className={`${PageStyles["resources-table-a"]} wrap-anywhere`} href={resource.link}>{resource.name}</a>
+                            : <>{resource.name}</>
                       }
                     </td>
+                    <td className={PageStyles["resources-table-td"]}>{resource.course}</td>
+                    <td className={PageStyles["resources-table-td"]}>{resource.author}</td>
                   </tr>
                 ))
               }
@@ -53,19 +51,21 @@ export default function BooksAndReferences() {
                   <td className={PageStyles["resources-table-td"]}>Name</td>
                   <td className={PageStyles["resources-table-td"]}>Description</td>
                   <td className={PageStyles["resources-table-td"]}>Type</td>
-                  <td className={PageStyles["resources-table-td"]}>Link</td>
                 </tr>
               </thead>
               <tbody>
               {
                 Resources.map((resource, idx) => (
                   <tr key={idx}>
-                    <td className={PageStyles["resources-table-td"]}>{resource.name}</td>
+                    <td className={PageStyles["resources-table-td"]}>
+                      {
+                        resource.link ?
+                            <a className={`${PageStyles["resources-table-a"]} wrap-anywhere`} href={resource.link}>{resource.name}</a>
+                            : <>{resource.name}</>
+                      }
+                    </td>
                     <td className={PageStyles["resources-table-td"]}>{resource.description}</td>
                     <td className={PageStyles["resources-table-td"]}>{resource.type}</td>
-                    <td className={PageStyles["resources-table-td"]}>
-                      <a className={PageStyles["resources-table-a"]} href={resource.link}>{resource.link}</a>
-                    </td>
                   </tr>
                 ))
               }

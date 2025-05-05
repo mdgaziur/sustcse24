@@ -7,7 +7,7 @@
 
 .resources-table {
     @apply rounded-md;
-    @apply max-w-7xl;
+    @apply max-w-2xl;
     @apply sm:text-sm;
     @apply text-[12px];
 }

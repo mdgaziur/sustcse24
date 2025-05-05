@@ -125,8 +125,8 @@ export default function Home() {
         </div>
         <div className="title-container z-10 bg-white h-screen -top-full w-screen absolute sm:gap-10 gap-5 left-0 flex flex-col justify-center items-center">
           <Image className="md:w-50 w-25" priority={true} src={SustLogo} alt="Logo of SUST" />
-          <h1 className="title text-[#0e0e0e] font-mono">SUST</h1>
-          <h2 className={`motto ${PageStyles['motto']} font-mono text-center`}></h2>
+          <h1 className="title text-[#0e0e0e] font-mono text-center">SUST</h1>
+          <h3 className={`motto ${PageStyles['motto']} font-mono text-center`}></h3>
         </div>
 
 {/*        <button
