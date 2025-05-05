@@ -3,6 +3,11 @@ import Head from "next/head";
 import {Books, Resources} from "@/app/books-and-resources/resources";
 import PageStyles from "./page.module.css";
 
+export const metadata = {
+  title: "SUST CSE 24 - Books and References",
+  description: "Important books and references"
+};
+
 export default function BooksAndReferences() {
   return (
     <div className="min-h-screen flex flex-col items-center">
