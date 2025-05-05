@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import { Inter, Geist_Mono } from "next/font/google";
+import type {Metadata} from "next";
+import {Geist_Mono, Inter} from "next/font/google";
 import "./globals.css";
 import Cursor from "@/components/cursor";
 
@@ -20,18 +20,18 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
+                                     children,
+                                   }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.className} ${geistMono.variable} antialiased`}
-      >
-        <Cursor />
-        {children}
-      </body>
+    <body
+      className={`${inter.className} ${geistMono.variable} antialiased`}
+    >
+    <Cursor/>
+    {children}
+    </body>
     </html>
   );
 }

@@ -1,5 +1,5 @@
 "use client";
-import { gsap } from "gsap";
+import {gsap} from "gsap";
 import {useGSAP} from "@gsap/react";
 import {useRef} from "react";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
@@ -14,7 +14,7 @@ import NavBar from "@/components/nav";
 
 const GSAP_TIMESCALE = 1.75;
 
-gsap.registerPlugin(useGSAP,ScrollTrigger,ScrollToPlugin,MotionPathPlugin,EaselPlugin,TextPlugin);
+gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollToPlugin, MotionPathPlugin, EaselPlugin, TextPlugin);
 
 export default function Home() {
   const container = useRef(null);
@@ -98,38 +98,40 @@ export default function Home() {
       display: "none",
     }, "end");
 
-/*    tl.to(".scroll-indicator-container", {
-      opacity: 1,
-      duration: 1,
-    });*/
+    /*    tl.to(".scroll-indicator-container", {
+          opacity: 1,
+          duration: 1,
+        });*/
 
     tl.timeScale(GSAP_TIMESCALE);
-  }, { scope: container });
+  }, {scope: container});
 
-/*  function skipIntro() {
-    const timeline = gsap.getById("main_timeline");
-    timeline!.seek("end");
-  }*/
+  /*  function skipIntro() {
+      const timeline = gsap.getById("main_timeline");
+      timeline!.seek("end");
+    }*/
 
   return (
     <main ref={container}>
-{/*      <button
+      {/*      <button
         className="skip-intro-button absolute top-5 left-5 p-3 pl-5 pr-5 rounded-sm bg-[#0f0f0f] text-foreground-secondary z-20"
         onClick={skipIntro}>
         Skip Intro
       </button>*/}
       <header className="h-screen w-screen fixed top-0 left-0">
-        <NavBar classes={"absolute right-0 top-0 z-20"} linkClasses={"-mt-14 opacity-0"} />
+        <NavBar classes={"absolute right-0 top-0 z-20"} linkClasses={"-mt-14 opacity-0"}/>
         <div className="stock-footage-container absolute h-screen w-screen opacity-0 z-0">
-          <video className="stock-footage object-cover h-full w-full opacity-90" src="stock.mp4" loop={true} muted={true} autoPlay={true}></video>
+          <video className="stock-footage object-cover h-full w-full opacity-90" src="stock.mp4" loop={true}
+                 muted={true} autoPlay={true}></video>
         </div>
-        <div className="title-container z-10 bg-white h-screen -top-full w-screen absolute sm:gap-10 gap-5 left-0 flex flex-col justify-center items-center">
-          <Image className="md:w-50 w-25" priority={true} src={SustLogo} alt="Logo of SUST" />
+        <div
+          className="title-container z-10 bg-white h-screen -top-full w-screen absolute sm:gap-10 gap-5 left-0 flex flex-col justify-center items-center">
+          <Image className="md:w-50 w-25" priority={true} src={SustLogo} alt="Logo of SUST"/>
           <h1 className="title text-[#0e0e0e] font-mono text-center">SUST</h1>
           <h3 className={`motto ${PageStyles['motto']} font-mono text-center`}></h3>
         </div>
 
-{/*        <button
+        {/*        <button
           className="scroll-indicator-container z-40 absolute opacity-0 bottom-10 left-1/2 w-15 h-15 border-1 border-[#aaaaaa] hover:border-[#ffffff] hover:bg-white hover:*:fill-black transition-colors rounded-full"
           onClick={() => document.querySelector(".students-list")!.scrollIntoView( {
             behavior: "smooth",

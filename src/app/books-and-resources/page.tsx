@@ -14,7 +14,7 @@ export default function BooksAndReferences() {
       <Head>
         <title>SUST CSE 24 - Books and References</title>
       </Head>
-      <NavBar />
+      <NavBar/>
       <div className="flex-1 flex flex-col items-center gap-5 p-5 w-full">
         <div className={"w-full flex flex-col items-center gap-5"}>
           <h2>Books</h2>
@@ -34,8 +34,9 @@ export default function BooksAndReferences() {
                     <td className={PageStyles["resources-table-td"]}>
                       {
                         resource.link ?
-                            <a className={`${PageStyles["resources-table-a"]} wrap-anywhere`} href={resource.link}>{resource.name}</a>
-                            : <>{resource.name}</>
+                          <a className={`${PageStyles["resources-table-a"]} wrap-anywhere`}
+                             href={resource.link}>{resource.name}</a>
+                          : <>{resource.name}</>
                       }
                     </td>
                     <td className={PageStyles["resources-table-td"]}>{resource.course}</td>
@@ -52,11 +53,11 @@ export default function BooksAndReferences() {
           <div className={PageStyles["table-container"]}>
             <table className={PageStyles["resources-table"]}>
               <thead>
-                <tr>
-                  <td className={PageStyles["resources-table-td"]}>Name</td>
-                  <td className={PageStyles["resources-table-td"]}>Description</td>
-                  <td className={PageStyles["resources-table-td"]}>Type</td>
-                </tr>
+              <tr>
+                <td className={PageStyles["resources-table-td"]}>Name</td>
+                <td className={PageStyles["resources-table-td"]}>Description</td>
+                <td className={PageStyles["resources-table-td"]}>Type</td>
+              </tr>
               </thead>
               <tbody>
               {
@@ -65,8 +66,9 @@ export default function BooksAndReferences() {
                     <td className={PageStyles["resources-table-td"]}>
                       {
                         resource.link ?
-                            <a className={`${PageStyles["resources-table-a"]} wrap-anywhere`} href={resource.link}>{resource.name}</a>
-                            : <>{resource.name}</>
+                          <a className={`${PageStyles["resources-table-a"]} wrap-anywhere`}
+                             href={resource.link}>{resource.name}</a>
+                          : <>{resource.name}</>
                       }
                     </td>
                     <td className={PageStyles["resources-table-td"]}>{resource.description}</td>

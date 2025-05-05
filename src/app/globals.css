@@ -1,35 +1,36 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-geist-mono);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-inter);
+    --font-mono: var(--font-geist-mono);
 }
 
 @theme {
-  --color-background: #0a0a0a;
-  --color-foreground-secondary: #afafaf;
-  --color-foreground-secondary-hover: #d5d5d5;
+    --color-background: #0a0a0a;
+    --color-foreground-secondary: #afafaf;
+    --color-foreground-secondary-hover: #d5d5d5;
 }
 
 body {
-  background: var(--color-background);
-  color: #e0e0e0;
-  font-family: --font-sans, Arial, Helvetica, sans-serif;
-  overflow-x: hidden;
+    background: var(--color-background);
+    color: #e0e0e0;
+    font-family: --font-sans, Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
 }
 
 nav > a:hover {
-  color: var(--color-foreground-secondary-hover);
-  transition: all 500ms;
+    color: var(--color-foreground-secondary-hover);
+    transition: all 500ms;
 }
 
 .stock-footage-container {
-  background-image: url("../../public/led.png");
-  background-size: 10%;
-  background-repeat: round;
+    background-image: url("../../public/led.png");
+    background-size: 10%;
+    background-repeat: round;
 }
+
 /*
 
 body, a, button {
@@ -38,14 +39,14 @@ body, a, button {
 */
 
 h1 {
-  @apply md:text-8xl text-4xl;
+    @apply md:text-8xl text-4xl;
 }
 
 h2 {
-  @apply text-4xl;
+    @apply text-4xl;
 }
 
 h1, h2 {
-  @apply font-semibold;
-  @apply tracking-tighter;
+    @apply font-semibold;
+    @apply tracking-tighter;
 }
