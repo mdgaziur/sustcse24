@@ -38,7 +38,7 @@ export default function CurriculumPage() {
                         <tr>
                           <td className={"p-5 border-1"}>Course Id</td>
                           <td className={"p-5 border-1"}>Course Title</td>
-                          <td className={"p-5 border-1"}>Credit Hours</td>
+                          {/* <td className={"p-5 border-1"}>Credit Hours</td> */}
                           <td className={"p-5 border-1"}>Credits</td>
                         </tr>
                         </thead>
@@ -57,7 +57,7 @@ export default function CurriculumPage() {
                                   </h1>
                                 </td>
                                 <td className={"p-5 border-1"}>{course.course_title}</td>
-                                <td className={"p-5 border-1"}>{course.contact_hours}</td>
+                                {/* <td className={"p-5 border-1"}>{course.contact_hours}</td> */}
                                 <td className={"p-5 border-1"}>{course.credits}</td>
                               </tr>
                               {
